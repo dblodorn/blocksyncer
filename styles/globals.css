@@ -1,0 +1,33 @@
+@font-face {
+  font-family: ptRegular;
+  src: url('/fonts/PT-Root-UI_Regular.woff');
+}
+
+@font-face {
+  font-family: ptMedium;
+  src: url('/fonts/PT-Root-UI_Medium.woff');
+}
+
+@font-face {
+  font-family: ptBold;
+  src: url('/fonts/PT-Root-UI_Bold.woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --dk-grey: rgba(0, 0, 0, 0.6);
+  --light-grey: rgba(0, 0, 0, 0.125);
+  --nouns-beige: #e1d7d5;
+}
