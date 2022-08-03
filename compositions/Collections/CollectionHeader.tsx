@@ -5,21 +5,14 @@ import {
 } from '@zoralabs/zdk/dist/queries/queries-sdk'
 import { AddressWithLink } from '@market'
 import { PageHeader } from '../../components/PageHeader'
-import {
-  clickAnimation,
-  collectionHeaderWrapper,
-  daoHeaderWrapper,
-  collectionNameThumbDao,
-} from 'styles/styles.css'
-import { MAX_WIDTH } from 'styles/style-constants'
-import { CollectionThumbnail } from '@media/CollectionThumbnail'
+import { clickAnimation, collectionHeaderWrapper } from 'styles/styles.css'
+import { CollectionThumbnail } from 'components/@media/CollectionThumbnail'
 
 export interface CollectionHeaderProps extends GridProps {
   collection: Collection
   aggregateStats: CollectionStatsAggregateQuery
   children?: JSX.Element
   currentAuction?: JSX.Element | null
-  layout?: 'dao' | 'collection'
 }
 
 export function CollectionHeader({
@@ -27,24 +20,11 @@ export function CollectionHeader({
   aggregateStats,
   children,
   currentAuction,
-  layout = 'collection',
   ...props
 }: CollectionHeaderProps) {
   return (
-    <Grid
-      className={[
-        collectionHeaderWrapper,
-        layout === 'dao' ? daoHeaderWrapper : 'collections-header-wrapper',
-      ]}
-      {...props}
-    >
-      <Stack
-        align={{
-          '@initial': 'center',
-          '@1024': layout === 'collection' ? 'center' : 'flex-start',
-        }}
-        gap="x4"
-      >
+    <Grid className={[collectionHeaderWrapper, 'collections-header-wrapper']} {...props}>
+      <Stack align="center" gap="x4">
         <Stack
           gap="x2"
           px={{
@@ -53,35 +33,21 @@ export function CollectionHeader({
           }}
         >
           <Grid
-            className={[layout === 'dao' ? collectionNameThumbDao : '']}
             align="center"
             pt={{
               '@initial': 'x6',
               '@1024': 'x0',
             }}
           >
-            <CollectionThumbnail
-              collectionAddress={collection.address}
-              radius="round"
-              m="auto"
-            />
+            <CollectionThumbnail collectionAddress={collection.address} m="auto" />
             <PageHeader
               headline={collection.name}
               copy={`${aggregateStats.aggregateStat.nftCount} NFTs`}
-              align={{
-                '@initial': 'center',
-                '@1024': layout === 'collection' ? 'center' : 'flex-start',
-              }}
-              px={layout === 'collection' ? 'x4' : 'x0'}
+              align="center"
+              px="x4"
             />
           </Grid>
-          <Flex
-            w="100%"
-            justify={{
-              '@initial': 'center',
-              '@1024': layout === 'dao' ? 'flex-start' : 'center',
-            }}
-          >
+          <Flex w="100%" justify="center">
             <AddressWithLink
               address={collection.address}
               useEns={false}
@@ -98,33 +64,10 @@ export function CollectionHeader({
             <Paragraph>{collection.description}</Paragraph>
           )}
         </Stack>
-        <Flex
-          w="100%"
-          justify={{
-            '@initial': 'center',
-            '@1024': layout === 'dao' ? 'flex-start' : 'center',
-          }}
-        >
+        <Flex w="100%" justify="center">
           {children}
         </Flex>
       </Stack>
-      {currentAuction && (
-        <Flex
-          w="100%"
-          justify={{
-            '@initial': 'center',
-            '@1024': 'flex-end',
-          }}
-          pt={{
-            '@initial': 'x4',
-          }}
-          px={{
-            '@initial': 'x4',
-          }}
-        >
-          {currentAuction}
-        </Flex>
-      )}
     </Grid>
   )
 }

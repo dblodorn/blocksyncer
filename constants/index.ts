@@ -1,4 +1,4 @@
 export * from './collection-addresses'
-export * from './copy'
-export * from './layers'
 export * from './window'
+export * from './env-vars'
+export * from './strings'

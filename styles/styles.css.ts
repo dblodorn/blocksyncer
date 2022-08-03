@@ -1,13 +1,5 @@
 import { style, globalStyle } from '@vanilla-extract/css'
-import {
-  atoms,
-  media,
-  typography,
-  colorTheme,
-  radii,
-  fontWeight,
-  color,
-} from '@zoralabs/zord'
+import { atoms, media, typography, fontWeight, color } from '@zoralabs/zord'
 import {
   FOOTER_HEIGHT,
   FOOTER_HEIGHT_MOBILE,
@@ -18,27 +10,35 @@ import {
 import { recipe } from '@vanilla-extract/recipes'
 
 globalStyle('html, body', {
+  backgroundColor: 'var(--background-color)',
+})
+
+globalStyle('html, body', {
   margin: 0,
   padding: 0,
 })
 
+globalStyle('a', {
+  color: color.black100,
+  textDecoration: 'none',
+})
+
 globalStyle('*', {
-  fontFamily: "'ptBold', Arial, Helvetica, sans-serif!important",
+  fontFamily: 'SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace!important',
 })
 
 globalStyle('h1, h2, h3', {
-  fontFamily: "'Londrina Solid', cursive!important",
-  lineHeight: '1.125!important',
+  fontFamily: "'display', monospace!important",
 })
 
 globalStyle('light-font', {
   fontWeight: 300,
-  fontFamily: "'ptRegular', Arial, Helvetica, sans-serif!important",
+  fontFamily: 'SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace!important',
 })
 
 export const lightFont = style({
   fontWeight: 300,
-  fontFamily: "'ptRegular', Arial, Helvetica, sans-serif!important",
+  fontFamily: 'SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace!important',
 })
 
 export const noTextWrap = style({
@@ -69,6 +69,16 @@ export const buttonStyle = style([
   }),
 ])
 
+export const fullSizeImage = style([
+  atoms({
+    inset: 'x0',
+    position: 'absolute',
+    w: '100%',
+    h: '100%',
+    objectFit: 'cover',
+  }),
+])
+
 export const pageWrapper = style([
   {
     minHeight: `calc(100vh - ${HEADER_HEIGHT_MOBILE + FOOTER_HEIGHT_MOBILE}px)`,
@@ -91,31 +101,15 @@ export const maxWidthSm = style([
 ])
 
 globalStyle('.zord-acccordionTrigger > span', {
-  fontFamily: "'Londrina Solid', cursive!important",
+  fontFamily: "'display', monospace!important",
   fontSize: typography.size[8],
   paddingBottom: 10,
 })
 
 globalStyle('.zord-attributesHeading', {
-  fontFamily: "'Londrina Solid', cursive!important",
+  fontFamily: "'display', monospace!important",
   fontSize: typography.size[8],
   paddingTop: 10,
-})
-
-globalStyle('.nouns-market-traits h3 > button > span', {
-  fontFamily: "'ptBold', Arial, Helvetica, sans-serif!important",
-  fontSize: `${typography.size[10]}!important`,
-  textTransform: 'capitalize',
-  paddingBottom: 0,
-})
-
-globalStyle('.nouns-market-traits h3 > button', {
-  backgroundColor: `${colorTheme.background.tertiary}!important`,
-  paddingLeft: 10,
-  paddingRight: 10,
-  paddingBottom: 10,
-  borderRadius: radii.curved,
-  marginBottom: 5,
 })
 
 export const clickAnimation = style({
@@ -213,41 +207,6 @@ export const collectionHeaderWrapper = style([
   atoms({
     w: '100vw',
     overflowX: 'hidden',
-    // px: 'x4',
     m: 'auto',
-  }),
-])
-
-export const daoHeaderWrapper = style([
-  {
-    gridTemplateColumns: '1fr',
-    '@media': {
-      [media.min1024]: {
-        gridTemplateColumns: '1fr 1fr',
-      },
-    },
-  },
-  atoms({
-    pb: {
-      '@initial': 'x2',
-      '@1024': 'x6',
-    },
-  }),
-])
-
-export const collectionNameThumbDao = style([
-  {
-    gridTemplateColumns: '1fr',
-    '@media': {
-      [media.min1024]: {
-        gridTemplateColumns: '80px auto',
-      },
-    },
-  },
-  atoms({
-    gap: {
-      '@initial': 'x0',
-      '@1024': 'x4',
-    },
   }),
 ])

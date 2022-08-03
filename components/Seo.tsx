@@ -1,5 +1,11 @@
 import NextHead from 'next/head'
-import { APP_TITLE, APP_DESCRIPTION, OG_IMAGE, FAVICON, BASE_URL } from 'utils/env-vars'
+import {
+  APP_TITLE,
+  APP_DESCRIPTION,
+  OG_IMAGE,
+  FAVICON,
+  BASE_URL,
+} from 'constants/env-vars'
 
 export const Seo = ({
   title,

@@ -3,9 +3,9 @@ import { color, space, atoms } from '@zoralabs/zord'
 
 export const horizontalMenuButton = style([
   {
-    borderRadius: 0,
     paddingBottom: space.x2,
     borderBottom: `2px solid transparent`,
+    borderRadius: 'unset!important',
     selectors: {
       '&.active': {
         borderBottom: `2px solid ${color.black70}`,

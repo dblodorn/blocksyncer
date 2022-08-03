@@ -40,24 +40,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <svg style={{ display: 'none' }}>
-            <filter
-              style={{ display: 'none' }}
-              id="mosaic"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
-              filterRes="1"
-            >
-              <feFlood x="4" y="4" height="2" width="2" />
-              <feComposite width="8" height="8" />
-              <feTile result="a" />
-              <feComposite in="SourceGraphic" in2="a" operator="in" />
-              <feMorphology operator="dilate" radius="4" />
-            </filter>
-          </svg>
-          <ThemeProvider theme={lightTheme}>
+          <ThemeProvider theme={lightTheme} style={{ backgroundColor: 'transparent' }}>
             <Main />
             <NextScript />
           </ThemeProvider>

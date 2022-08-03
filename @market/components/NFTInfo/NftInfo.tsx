@@ -3,7 +3,7 @@ import { useNFT } from '@zoralabs/nft-hooks'
 import { useAccount } from 'wagmi'
 import { Flex, Stack, Separator } from '@zoralabs/zord'
 import { ModalTitleAndDescription } from '@market/components/ModalTitleAndDescription'
-import { CollectionThumbnail } from '@media/CollectionThumbnail'
+import { CollectionThumbnail } from 'components/@media/CollectionThumbnail'
 import { FillAskInfo } from './FillAskInfo'
 import { useTitleWithFallback } from 'hooks'
 

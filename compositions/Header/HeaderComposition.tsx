@@ -1,32 +1,26 @@
-import { Grid, Flex } from '@zoralabs/zord'
-import { BetaTag } from './BetaTag'
-import { NounsLink } from './NounsLink'
-import { CollectionMenu } from './CollectionMenu'
-import {
-  collectionTriggerWrapper,
-  connectWrapper,
-  headerWrapper,
-  manageButtonWrapper,
-} from './Header.css'
-import { useWindowWidth } from 'hooks'
+import { Grid, GridProps } from '@zoralabs/zord'
+import { CollectionMenu, CollectionMenuProps } from './../Menu'
+import { headerBrandingWrapper, headerWrapper } from './Header.css'
 import { ManageLink } from './ManageLink'
 import { ConnectButton } from './ConnectButton'
+import { HeaderBranding } from './HeaderBranding'
 
-export function HeaderComposition() {
-  const { isLarge } = useWindowWidth()
+export interface HeaderCompositionProps extends CollectionMenuProps {}
+
+export function HeaderComposition({
+  menuStyle = 'popover',
+  ...props
+}: HeaderCompositionProps) {
   return (
-    <Grid as="header" className={headerWrapper}>
-      <NounsLink />
-      {isLarge && <BetaTag />}
-      <Flex className={collectionTriggerWrapper}>
-        <CollectionMenu />
-      </Flex>
-      <Flex className={manageButtonWrapper}>
-        <ManageLink />
-      </Flex>
-      <Flex className={connectWrapper}>
-        <ConnectButton />
-      </Flex>
+    <Grid as="header" className={headerWrapper} {...props}>
+      <HeaderBranding
+        className={headerBrandingWrapper}
+        imageHeight="x14"
+        imageWidth="x14"
+      />
+      <CollectionMenu menuStyle={menuStyle} />
+      <ManageLink />
+      <ConnectButton />
     </Grid>
   )
 }

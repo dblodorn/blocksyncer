@@ -6,10 +6,10 @@ export const headerWrapper = style([
   {
     height: HEADER_HEIGHT_MOBILE,
     zIndex: HEADER_Z,
-    alignContent: 'center',
     alignItems: 'center',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gridTemplateRows: 'auto',
+    justifyContent: 'start',
     borderBottom: `2px solid ${color.black10}`,
     '@media': {
       [media.min1024]: {
@@ -30,58 +30,19 @@ export const headerWrapper = style([
   }),
 ])
 
-export const nounsGlassesLink = style([
+/* ELEMENT WRAPPERS FOR GRID PLACEMENT */
+export const headerBrandingWrapper = style([
   {
     gridColumn: '1',
-    aspectRatio: '70 / 24',
-    maxHeight: '30px',
+    gridRow: '1',
   },
   atoms({
     cursor: 'pointer',
     pos: 'relative',
-    h: '100%',
   }),
 ])
 
-export const nounsGlasses = style([
-  atoms({
-    w: '100%',
-    h: '100%',
-    inset: 'x0',
-  }),
-])
-
-export const collectionTrigger = style([
-  atoms({
-    borderRadius: 'curved',
-    gap: 'x2',
-    px: 'x4',
-  }),
-])
-
-export const collectionTriggerWrapper = style([
-  {
-    gridColumn: '1',
-    gridRow: '2',
-    '@media': {
-      [media.min1024]: {
-        gridColumn: '3',
-        gridRow: '1',
-      },
-    },
-  },
-  atoms({
-    w: '100%',
-    justifyContent: 'flex-start',
-  }),
-])
-
-export const modalWrapper = style({
-  overflowY: 'scroll',
-  height: 400,
-})
-
-export const manageButtonWrapper = style([
+export const manageButton = style([
   {
     gridColumn: '2',
     gridRow: '2',
@@ -94,28 +55,11 @@ export const manageButtonWrapper = style([
   },
   atoms({
     w: '100%',
-    justifyContent: 'flex-end',
-  }),
-])
-
-export const manageButton = style([
-  {
-    width: 130,
-  },
-  atoms({
-    display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
-    h: '100%',
-    backgroundColor: 'tertiary',
-    py: {
-      '@initial': 'x1',
-      '@1024': 'x2',
-    },
   }),
 ])
 
-export const connectWrapper = style([
+export const connectButtonWrapper = style([
   {
     gridColumn: '2',
     gridRow: '1',

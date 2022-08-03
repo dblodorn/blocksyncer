@@ -5,17 +5,15 @@ import { FOOTER_HEIGHT, FOOTER_HEIGHT_MOBILE } from 'styles/style-constants'
 export const footerWrapper = style([
   {
     height: FOOTER_HEIGHT_MOBILE,
-    justifyContent: 'flex-start',
     '@media': {
       [media.min1024]: {
         height: FOOTER_HEIGHT,
-        justifyContent: 'center',
       },
     },
   },
   atoms({
     w: '100%',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     px: 'x4',
   }),

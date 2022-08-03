@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next'
 import { assert } from 'console'
 import { ZDKFetchStrategy } from '@zoralabs/nft-hooks/dist/strategies'
 import { prepareJson } from '@zoralabs/nft-hooks/dist/fetcher/NextUtils'
-import { GALACTUS_BASE_URL } from 'utils/env-vars'
+import { GALACTUS_BASE_URL } from 'constants/env-vars'
 
 const zdkFetchStrategy = new ZDKFetchStrategy('1', GALACTUS_BASE_URL)
 

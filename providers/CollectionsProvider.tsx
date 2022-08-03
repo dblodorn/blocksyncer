@@ -6,24 +6,25 @@ import {
   Dispatch,
   SetStateAction,
 } from 'react'
-import { collectionAddresses, daoAddresses } from 'constants/collection-addresses'
+import { collectionAddresses, editionAddresses } from 'constants/collection-addresses'
 import { CollectionsData } from 'hooks/zdk/useCollections'
+import { MENU_CTA } from 'constants/strings'
 
 const CollectionsContext = createContext<{
   collections: CollectionsData[] | []
-  daos: any[]
   collectionAmount: number
-  daosAmount: number
+  editions: any[]
+  editionsAmount: number
   currentCollection: string
   setCurrentCollection: Dispatch<SetStateAction<string>>
   currentCollectionCount: string | undefined
   setCurrentCollectionCount: Dispatch<SetStateAction<string | undefined>>
 }>({
   collections: [],
-  daos: [],
   collectionAmount: collectionAddresses.length,
-  daosAmount: daoAddresses.length,
-  currentCollection: 'Explore...',
+  editions: [],
+  editionsAmount: editionAddresses.length,
+  currentCollection: MENU_CTA,
   setCurrentCollection: () => {},
   currentCollectionCount: undefined,
   setCurrentCollectionCount: () => {},
@@ -32,15 +33,19 @@ const CollectionsContext = createContext<{
 type CollectionsProps = {
   children?: ReactNode
   collections: CollectionsData[] | undefined
-  daos: any[] | undefined
+  editions: any[] | undefined
 }
 
 export function useCollectionsContext() {
   return useContext(CollectionsContext)
 }
 
-export function CollectionsProvider({ children, collections, daos }: CollectionsProps) {
-  const [currentCollection, setCurrentCollection] = useState<string>('Explore...')
+export function CollectionsProvider({
+  children,
+  collections,
+  editions,
+}: CollectionsProps) {
+  const [currentCollection, setCurrentCollection] = useState<string>(MENU_CTA)
   const [currentCollectionCount, setCurrentCollectionCount] = useState<
     string | undefined
   >(undefined)
@@ -51,9 +56,10 @@ export function CollectionsProvider({ children, collections, daos }: Collections
         /* @ts-ignore */
         collections: collections ? collections : [],
         collectionAmount: collectionAddresses.length,
-        daos: daos ? daos : [],
-        daosAmount: daoAddresses.length,
         currentCollection,
+        editions: editions ? editions : [],
+        editionsAmount: editionAddresses.length,
+        /* NAVIGATION */
         setCurrentCollection,
         currentCollectionCount,
         setCurrentCollectionCount,

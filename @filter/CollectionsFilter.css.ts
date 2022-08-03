@@ -55,7 +55,7 @@ export const activityButton = style([
 
 export const filterWrapper = style({
   top: `var(--filter-offset-desktop)`,
-  background: 'white',
+  background: 'var(--background-color)',
   zIndex: 2,
   '@media': {
     'screen and (max-width: 768px)': {
@@ -108,8 +108,6 @@ export const filterHeader = style([
 
 export const stickyFilterHeader = style({
   top: `0px`,
-  //backdropFilter: 'blur(20px)',
-  //backgroundColor: 'rgba(255, 255, 255, 0.92)',
 })
 
 export const avatarPadding = style({
@@ -124,10 +122,11 @@ export const filterSidebar = style([
   {
     overflowY: 'scroll',
     height: `calc(100% - ${HEADER_HEIGHT}px)`,
+    background: 'var(--background-color)',
     '@media': {
       'screen and (max-width: 768px)': {
         position: 'relative',
-        background: vars.color.background.primary,
+        background: 'var(--background-color)',
         width: '100%',
         paddingRight: '0',
         height: '100%',
@@ -200,7 +199,7 @@ export const filterOption = style({
   outline: 0,
   transition: 'border 100ms $inOut, background 100ms $inOut, transform 200ms $out',
   userSelect: 'none',
-  backgroundColor: '$transparent',
+  backgroundColor: 'transparent',
   selectors: {
     '&:hover:not([disabled])': {
       backgroundColor: vars.color.background.primary,

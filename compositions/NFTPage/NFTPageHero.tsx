@@ -1,7 +1,7 @@
 import { Box, BoxProps } from '@zoralabs/zord'
-import { cardImageWrapper } from '@media/NftMedia.css'
+import { cardImageWrapper } from 'components/@media/NftMedia.css'
 import { nftPageHero } from './NFTPage.css'
-import { useSourceImage } from '@media/hooks/useSrcImage'
+import { useSourceImage } from 'components/@media/hooks/useSrcImage'
 import { useNFTProvider } from '@shared/providers/NFTProvider'
 import { ImageWithNounFallback } from 'components'
 

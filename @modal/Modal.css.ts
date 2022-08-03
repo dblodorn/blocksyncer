@@ -1,4 +1,4 @@
-import { atoms, media, ease, vars } from '@zoralabs/zord'
+import { atoms, vars } from '@zoralabs/zord'
 import { keyframes, style } from '@vanilla-extract/css'
 
 const MODAL_BACKDROP_LAYER = 2000
@@ -9,6 +9,7 @@ export const overlay = style([
     inset: 0,
     placeItems: 'center',
     zIndex: MODAL_BACKDROP_LAYER,
+    backdropFilter: 'blur(5px)',
   },
   atoms({ position: 'fixed', display: 'grid' }),
 ])
@@ -33,7 +34,7 @@ export const background = style([
     overflowY: 'auto',
     background: 'white',
   },
-  atoms({ borderRadius: 'normal' }),
+  atoms({ borderRadius: 'phat' }),
 ])
 
 export const customContent = style([

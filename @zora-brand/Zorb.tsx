@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 import { gradientForAddress } from './utils/gradient'
-import { Box } from '@zoralabs/zord'
+import { Box, BoxProps } from '@zoralabs/zord'
 
-export interface ZorbProps {
+export interface ZorbProps extends BoxProps {
   address?: string
   size?: number | '100%'
   greyscale?: boolean
@@ -30,18 +30,16 @@ export const Zorb = ({
   const returnSize = size === '100%' ? '100%' : `${size}px`
 
   return (
-    <>
-      <Box
-        display="block"
-        borderRadius="round"
-        overflow="hidden"
-        inset="x0"
-        style={{
-          height: returnSize,
-          width: returnSize,
-          background: background,
-        }}
-      />
-    </>
+    <Box
+      display="block"
+      borderRadius="round"
+      overflow="hidden"
+      inset="x0"
+      style={{
+        height: returnSize,
+        width: returnSize,
+        background: background,
+      }}
+    />
   )
 }

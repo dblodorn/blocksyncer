@@ -10,7 +10,7 @@ import { NFTObject } from '@zoralabs/nft-hooks'
 import { GetServerSideProps } from 'next'
 import { zdk } from '@shared/utils/zdk'
 import { buildCollectionSEO, SeoProps } from 'utils/seo'
-import { allAddresses } from 'constants/collection-addresses'
+import { allAddressesById } from 'constants/collection-addresses'
 
 export type CollectionServiceProps = {
   initialPage: NFTObject[]
@@ -35,41 +35,13 @@ export async function collectionService({ params }: CollectionParamsProps) {
 
   if (!tokenAddress) return false
 
-  if (tokenAddress && !allAddresses.includes(tokenAddress)) {
+  if (tokenAddress && !allAddressesById.includes(tokenAddress)) {
     return {
       notFound: true,
     }
   }
 
   try {
-    let resp
-    /*
-    try {
-      resp = await zdk.tokens({
-        where: {
-          collectionAddresses: [tokenAddress],
-        },
-        filter: {},
-        pagination: {
-          limit: 1,
-        },
-        includeFullDetails: true,
-      })
-    } catch (err) {
-      resp = await zdk.tokens({
-        where: {
-          collectionAddresses: [tokenAddress],
-        },
-        pagination: {
-          limit: 1,
-        },
-      })
-    }
-
-    const initialPage = resp.tokens.nodes
-      .map((token) => transformNFTZDK(token, { rawData: token }))
-      .map(prepareJson)
-    */
     const networkInput = {
       chain: Chain.Mainnet, // TODO: enable additional chains
       network: Network.Ethereum,

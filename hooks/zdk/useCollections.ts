@@ -1,7 +1,10 @@
 import { Collection } from '@zoralabs/zdk/dist/queries/queries-sdk'
 import { zdk } from '@shared/utils/zdk'
 import { useEffect, useState } from 'react'
-import { collectionAddresses, daoAddresses } from 'constants/collection-addresses'
+import {
+  collectionsAddressOnly,
+  editionsAddressOnly,
+} from 'constants/collection-addresses'
 
 export type CollectionsData = Collection
 
@@ -9,14 +12,14 @@ export function useCollections() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<any>(undefined)
   const [collections, setCollections] = useState<Collection[] | undefined>(undefined)
-  const [daos, setDaos] = useState<any>(undefined)
+  const [editions, setEditions] = useState<any>(undefined)
 
   useEffect(() => {
     const fetchCollections = async () => {
       try {
         /* @ts-ignore */
         const data = await zdk.collections({
-          where: { collectionAddresses: collectionAddresses },
+          where: { collectionAddresses: collectionsAddressOnly },
         })
         setCollections(data?.collections?.nodes)
         setLoading(false)
@@ -33,9 +36,9 @@ export function useCollections() {
       try {
         /* @ts-ignore */
         const data = await zdk.collections({
-          where: { collectionAddresses: daoAddresses },
+          where: { collectionAddresses: editionsAddressOnly },
         })
-        setDaos(data?.collections?.nodes)
+        setEditions(data?.collections?.nodes)
       } catch (err) {
         console.error(err)
       }
@@ -47,6 +50,6 @@ export function useCollections() {
     loading,
     error,
     collections,
-    daos,
+    editions,
   }
 }
