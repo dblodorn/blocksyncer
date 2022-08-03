@@ -15,7 +15,7 @@ export function ManageLink() {
         as="a"
         size="md"
         variant="secondary"
-        borderRadius="curved"
+        borderRadius="round"
         className={[manageButton, 'zora-popover-menu__manage-link']}
         style={{
           height: 42,

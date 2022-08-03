@@ -21,7 +21,7 @@ export function NFTGrid({
 }: NFTGridProps) {
   return (
     <>
-      <Stack gap="x14" pb="x10">
+      <Stack gap="x14" pb="x10" className="nft-grid-wrapper">
         <Grid {...props}>
           {items.map((nft) => (
             <NFTProvider

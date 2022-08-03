@@ -31,7 +31,7 @@ export function PopoutMenu({ ...props }: PopoutMenuProps) {
           as="span"
           size="md"
           variant="secondary"
-          borderRadius="curved"
+          borderRadius="round"
           display="flex"
           w="100%"
           className={[collectionTrigger, noTextWrap]}

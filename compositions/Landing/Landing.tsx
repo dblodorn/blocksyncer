@@ -1,9 +1,13 @@
 import { Display, Grid, Stack } from '@zoralabs/zord'
-import { landingGridWrapper, landingGridPanel, landingHeadline } from './Landing.css'
-import { CollectionNavList } from 'compositions/Menu/CollectionNavList'
-import { useCollectionsContext } from 'providers'
+import {
+  landingGridWrapper,
+  landingGridPanel,
+  landingHeadline,
+  nftRowEdition,
+  nftRowCollection,
+} from './Landing.css'
 import { CollectionFilterProvider } from '@filter'
-import { Collections } from 'compositions/Collections'
+import { LandingNFTs } from './LandingNFTs'
 import {
   collectionsAddressOnly,
   editionsAddressOnly,
@@ -25,9 +29,7 @@ export function Landing() {
           contractAddress={collectionsAddressOnly}
           useSidebarFilter={false}
         >
-          <Stack mt="x4">
-            <Collections />
-          </Stack>
+          <LandingNFTs collectionType="collection" customClassName={nftRowCollection} />
         </CollectionFilterProvider>
       </Stack>
       <Stack className={[landingGridPanel]} style={{ backgroundColor: '#405416' }}>
@@ -43,9 +45,7 @@ export function Landing() {
           contractAddress={editionsAddressOnly}
           useSidebarFilter={false}
         >
-          <Stack mt="x4">
-            <Collections />
-          </Stack>
+          <LandingNFTs collectionType="edition" customClassName={nftRowEdition} />
         </CollectionFilterProvider>
       </Stack>
     </Grid>

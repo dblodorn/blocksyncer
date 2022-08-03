@@ -53,7 +53,7 @@ export function PopoverMenu({ ...props }: PopoverMenuProps) {
           as="span"
           size="md"
           variant="secondary"
-          borderRadius="curved"
+          borderRadius="round"
           display="flex"
           w="100%"
           className={[collectionTrigger, noTextWrap]}

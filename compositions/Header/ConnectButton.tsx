@@ -29,7 +29,7 @@ export const ConnectButton = ({ ...props }: ConnectButtonProps) => {
                       size="sm"
                       px="x4"
                       onClick={openConnectModal}
-                      borderRadius="curved"
+                      borderRadius="round"
                       style={{
                         whiteSpace: 'nowrap',
                       }}
@@ -44,7 +44,7 @@ export const ConnectButton = ({ ...props }: ConnectButtonProps) => {
                     variant="secondary"
                     onClick={openAccountModal}
                     type="button"
-                    borderRadius="curved"
+                    borderRadius="round"
                     style={{
                       gap: 8,
                       minWidth: 0,

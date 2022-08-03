@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { style, globalStyle } from '@vanilla-extract/css'
 import { atoms, color } from '@zoralabs/zord'
 import { HEADER_HEIGHT } from 'styles/style-constants'
 
@@ -34,4 +34,40 @@ export const landingHeadline = style([
     position: 'sticky',
     top: 'x0',
   }),
+])
+
+export const landingTokenGrid = style([
+  {
+    gridTemplateColumns: '1fr',
+  },
+  atoms({
+    w: '100%',
+  }),
+])
+
+globalStyle(`${landingGridWrapper} .nft-grid-wrapper`, {
+  padding: '0px!important',
+  gap: '0px!important',
+})
+
+export const nftRowEdition = style([
+  {
+    backgroundColor: '#e1c9b1',
+    selectors: {
+      '&:nth-of-type(even)': {
+        backgroundColor: '#66c589',
+      },
+    },
+  },
+])
+
+export const nftRowCollection = style([
+  {
+    backgroundColor: '#66c589',
+    selectors: {
+      '&:nth-of-type(even)': {
+        backgroundColor: '#e1c9b1',
+      },
+    },
+  },
 ])
