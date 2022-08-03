@@ -42,7 +42,7 @@ export interface FilterConfigProps {
 }
 
 export interface FilterContextInputProps extends FilterConfigProps {
-  contractAddress?: string | null
+  contractAddress?: string | string[] | null
   ownerAddress?: string
   contractWhiteList?: string[] | undefined
 }

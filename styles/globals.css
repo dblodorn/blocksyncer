@@ -29,9 +29,9 @@
 
 .outline-font,
 .outline-font * {
-  color: black;
-  -webkit-text-fill-color: black;
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: white;
+  color: var(--background-color);
+  -webkit-text-fill-color: var(--background-color);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--menu-bg-color);
   letter-spacing: 5px;
 }

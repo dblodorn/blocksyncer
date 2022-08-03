@@ -16,7 +16,7 @@ const PAGE_SIZE = 24
 
 export interface UseTokenQueryProps {
   contractWhiteList?: string[] | undefined
-  contractAddress?: string | null
+  contractAddress?: string | string[] | null
   ownerAddress?: string
   initialData?: NFTObject[]
   sort?: TokenSortInput
@@ -61,6 +61,8 @@ UseTokenQueryProps) {
         ...(contractAddress && {
           collectionAddresses: ownerAddress
             ? contractWhiteList
+            : Array.isArray(contractAddress)
+            ? contractAddress
             : getAddress(contractAddress),
         }),
         ...(ownerAddress && {

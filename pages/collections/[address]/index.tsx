@@ -46,7 +46,6 @@ const Collection = ({
       {contractAddress && (
         <CollectionFilterProvider
           useSidebarClearButton
-          filtersVisible={isLarge ? true : false}
           contractAddress={contractAddress}
           useCollectionProperties={{
             header: 'Traits',
