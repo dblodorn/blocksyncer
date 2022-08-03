@@ -1,5 +1,5 @@
 import { style, globalStyle } from '@vanilla-extract/css'
-import { atoms, media, typography, fontWeight, color } from '@zoralabs/zord'
+import { atoms, media, typography, fontWeight, color, space } from '@zoralabs/zord'
 import {
   FOOTER_HEIGHT,
   FOOTER_HEIGHT_MOBILE,
@@ -100,6 +100,9 @@ export const maxWidthSm = style([
   }),
 ])
 
+/**
+ * Ovveride styles for filter
+ */
 globalStyle('.zord-acccordionTrigger > span', {
   fontFamily: "'display', monospace!important",
   fontSize: typography.size[8],
@@ -110,6 +113,26 @@ globalStyle('.zord-attributesHeading', {
   fontFamily: "'display', monospace!important",
   fontSize: typography.size[8],
   paddingTop: 10,
+})
+
+globalStyle('.zord-accordionContent', {
+  backgroundColor: 'var(--background-color)!important',
+})
+
+globalStyle('.zord-accordion', {
+  borderBottom: `1px dashed ${color.black30}`,
+})
+
+globalStyle('.blocksyncer-traits-wrapper', {
+  paddingTop: space.x4,
+})
+
+globalStyle('.zord-attributesHeading', {
+  borderBottom: `1px dashed ${color.black30}`,
+})
+
+globalStyle('.zord-accordionHeader', {
+  marginBottom: `${space.x1}!important`,
 })
 
 export const clickAnimation = style({

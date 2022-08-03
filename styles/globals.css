@@ -19,6 +19,7 @@
   --border-a: 1px solid blue;
   --border-b: 1px dotted rgba(255, 255, 255, 0.5);
   --background-color: #e8e5dc;
+  --menu-bg-color: #ffea02;
 }
 
 .bd-console-italic,

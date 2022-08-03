@@ -50,12 +50,11 @@ const Collection = ({
           contractAddress={contractAddress}
           useCollectionProperties={{
             header: 'Traits',
-            selector: 'nouns-market-traits',
+            selector: 'blocksyncer-traits-wrapper',
             hideBorder: true,
           }}
           usePriceRange={{
             label: 'Price',
-            defaultState: 'open',
             hideBorder: true,
             hideCurrencySelect: true,
           }}

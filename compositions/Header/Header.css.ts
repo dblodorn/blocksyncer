@@ -72,6 +72,6 @@ export const connectButtonWrapper = style([
   },
   atoms({
     w: '100%',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
   }),
 ])

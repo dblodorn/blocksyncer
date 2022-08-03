@@ -4,7 +4,15 @@ const withVanillaExtract = createVanillaExtractPlugin()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-
+  async redirects() {
+    return [
+      {
+        source: '/collections',
+        destination: '/',
+        permanent: false,
+      },
+    ]
+  },
   images: {
     domains: [
       // For debugging images

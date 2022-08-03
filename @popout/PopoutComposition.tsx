@@ -5,8 +5,6 @@ import { PopoutPortal } from './PopoutPortal'
 import { PopoutOverlay } from './PopoutOverlay'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const MotionBox = motion(Box)
-
 export interface PopoutCompositionProps extends BoxProps {
   /** Unique identifier / key for the popout */
   popoutName: string
@@ -17,7 +15,7 @@ export interface PopoutCompositionProps extends BoxProps {
   closeTrigger?: JSX.Element
   /** pixel dimension of popout window (max width) */
   popoutWidth?: string
-  backgroundColor?: string
+  bgColor?: string
 }
 
 export function PopoutComposition({
@@ -26,7 +24,7 @@ export function PopoutComposition({
   trigger,
   closeTrigger,
   popoutWidth = '650px',
-  backgroundColor = '#fff',
+  bgColor = '#fff',
   ...props
 }: PopoutCompositionProps) {
   const { popoutType, requestClose, requestOpen } = usePopout()
@@ -54,7 +52,7 @@ export function PopoutComposition({
                 exit={{ transform: `translateX(-${popoutWidth})` }}
                 style={{
                   maxWidth: popoutWidth,
-                  backgroundColor: backgroundColor,
+                  backgroundColor: bgColor,
                   zIndex: 3000,
                   width: '100%',
                   position: 'fixed',

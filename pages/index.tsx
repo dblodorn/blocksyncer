@@ -4,7 +4,7 @@ import { allAddresses } from 'constants/collection-addresses'
 
 /* @ts-ignore */
 const Home = () => {
-  console.log('allAddresses', allAddresses)
+  // console.log('allAddresses', allAddresses)
   return (
     <PageWrapper direction="column" gap="x6">
       <Seo />

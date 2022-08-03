@@ -10,7 +10,6 @@ import {
   cardImageWrapper,
 } from 'components/@media/NftMedia.css'
 import { CollectionThumbnail } from 'components/@media/CollectionThumbnail'
-import { useTitleWithFallback } from 'hooks'
 import { useNFTProvider } from '@shared'
 import { ImageElement } from 'components'
 
@@ -20,14 +19,6 @@ export function NFTCard() {
     contractAddress,
     tokenId,
   } = useNFTProvider()
-
-  if (!data || !contractAddress || !tokenId) return null
-
-  const { fallbackTitle } = useTitleWithFallback(
-    contractAddress,
-    tokenId,
-    data?.metadata?.name
-  )
 
   const srcImg = useMemo(() => {
     if (data?.media?.mimeType === 'image/svg+xml') {
@@ -42,6 +33,8 @@ export function NFTCard() {
       return data?.metadata?.name.split('').length > 25
     }
   }, [data?.metadata])
+
+  if (!data || !contractAddress || !tokenId) return null
 
   return (
     <Stack w="100%" position="relative" overflow="hidden" className={cardWrapper}>
@@ -59,7 +52,7 @@ export function NFTCard() {
           }}
         >
           <Heading as="h4" size="sm" className={titleHeading}>
-            {fallbackTitle}
+            {data?.metadata?.name}
           </Heading>
         </Flex>
         <Flex align="center" gap="x2" justify="space-between">

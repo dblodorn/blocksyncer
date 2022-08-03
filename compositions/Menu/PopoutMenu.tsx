@@ -74,7 +74,7 @@ export function PopoutMenu({ ...props }: PopoutMenuProps) {
         </Stack>
       }
       popoutName={'main-menu'}
-      backgroundColor={'#FFEA02'}
+      bgColor={'var(--menu-bg-color'}
     />
   )
 }

@@ -114,7 +114,7 @@ export function FilterSidebar() {
           {useCollectionSearch && !contractAddress ? <CollectionsFilterList /> : null}
           {useSidebarClearButton ? (
             <ClearFilters
-              mt="x2"
+              mt="x4"
               borderRadius="curved"
               w="100%"
               display={{
