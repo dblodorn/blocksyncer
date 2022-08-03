@@ -108,7 +108,9 @@ export function FilterSidebar() {
           )}
           {ownerAddress && useFilterOwnerCollections && <FilterOwnerCollections />}
           {usePriceRange && <FilterPriceRange />}
-          {contractAddress && useCollectionProperties ? (
+          {contractAddress &&
+          useCollectionProperties &&
+          !Array.isArray(contractAddress) ? (
             <FilterProperties collectionAddress={contractAddress} />
           ) : null}
           {useCollectionSearch && !contractAddress ? <CollectionsFilterList /> : null}
