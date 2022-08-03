@@ -25,8 +25,6 @@ export const PopoutContextProvider = ({ children }: { children: ReactNode }) => 
     popoutType: undefined,
   })
 
-  console.log(popoutState)
-
   return (
     <PopoutContext.Provider value={[popoutState, setPopoutState]}>
       <Box
