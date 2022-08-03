@@ -9,7 +9,7 @@ export function LandingNFT({
   collectionType,
   customClassName,
 }: {
-  collectionType?: 'edition' | 'collection'
+  collectionType?: 'editions' | 'collections'
   customClassName?: any
 }) {
   const {
@@ -28,7 +28,7 @@ export function LandingNFT({
       style={{ height: 350 }}
       className={[customClassName, 'landing-nft-row']}
     >
-      <Link href={`/collections/${contractAddress}/${tokenId}`} passHref>
+      <Link href={`/${collectionType}/${contractAddress}/${tokenId}`} passHref>
         <Box
           h="100%"
           style={{ aspectRatio: '1/1' }}
@@ -43,7 +43,7 @@ export function LandingNFT({
           {data?.metadata?.name}
         </Heading>
         <Flex align="center" gap="x2" justify="space-between">
-          <Link href={`/collections/${contractAddress}`}>
+          <Link href={`/${collectionType}/${contractAddress}`}>
             <Flex align="center" gap="x2">
               <CollectionThumbnail
                 collectionAddress={contractAddress}
@@ -54,7 +54,7 @@ export function LandingNFT({
             </Flex>
           </Link>
         </Flex>
-        {collectionType === 'collection' && <NFTCardMarket nftData={data} />}
+        {collectionType === 'collections' && <NFTCardMarket nftData={data} />}
       </Stack>
     </Flex>
   )

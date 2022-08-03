@@ -7,7 +7,7 @@ export function LandingNFTs({
   collectionType,
   customClassName,
 }: {
-  collectionType?: 'edition' | 'collection'
+  collectionType?: 'editions' | 'collections'
   customClassName?: any
 }) {
   const {

@@ -29,7 +29,7 @@ export function Landing() {
           contractAddress={collectionsAddressOnly}
           useSidebarFilter={false}
         >
-          <LandingNFTs collectionType="collection" customClassName={nftRowCollection} />
+          <LandingNFTs collectionType="collections" customClassName={nftRowCollection} />
         </CollectionFilterProvider>
       </Stack>
       <Stack className={[landingGridPanel]} style={{ backgroundColor: '#405416' }}>
@@ -45,7 +45,7 @@ export function Landing() {
           contractAddress={editionsAddressOnly}
           useSidebarFilter={false}
         >
-          <LandingNFTs collectionType="edition" customClassName={nftRowEdition} />
+          <LandingNFTs collectionType="editions" customClassName={nftRowEdition} />
         </CollectionFilterProvider>
       </Stack>
     </Grid>

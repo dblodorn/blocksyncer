@@ -20,6 +20,10 @@
   --border-b: 1px dotted rgba(255, 255, 255, 0.5);
   --background-color: #e8e5dc;
   --menu-bg-color: #ffea02;
+  --syncer-yellow: #ffea02;
+  --nft-background-color: #f5f5b8;
+  --card-info-color: #fa9442;
+  --collection-background-color: #a3ad00;
 }
 
 .bd-console-italic,

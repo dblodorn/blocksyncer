@@ -1,5 +1,5 @@
 import { style, globalStyle } from '@vanilla-extract/css'
-import { atoms, vars, typography, media, radii } from '@zoralabs/zord'
+import { atoms, vars, typography, media, radii, color } from '@zoralabs/zord'
 import { MAX_WIDTH } from 'styles/style-constants'
 
 export const nftPageWrapper = style([
@@ -111,7 +111,8 @@ globalStyle(
 
 export const nftMarketWrapper = style([
   {
-    borderColor: vars.color.background.secondary,
+    border: `1px dashed ${color.black50}`,
+    backgroundColor: 'var(--card-info-color)',
   },
   atoms({
     borderRadius: 'phat',

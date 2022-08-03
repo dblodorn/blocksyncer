@@ -15,7 +15,7 @@ const NFT = ({
   return (
     <PageWrapper
       direction="column"
-      style={{ backgroundColor: 'var(--collection-background-color)' }}
+      style={{ backgroundColor: 'var(--nft-background-color)' }}
     >
       <Seo
         title={nft?.metadata?.name}
@@ -26,7 +26,7 @@ const NFT = ({
         initialData={nft}
         tokenAddress={tokenAddress}
         tokenId={tokenId}
-        /* Styling */
+        /* STYLING */
         mt="x8"
       />
     </PageWrapper>
