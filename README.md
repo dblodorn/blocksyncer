@@ -1,18 +1,22 @@
-# ⌐◨-◨
+# ϐׁׅ֒ᥣׁׅ֪ᨵׁׅᝯׁƙׁׅ֑꯱ׁׅ֒ᨮ꫶ׁׅ֮ꪀׁׅᝯׁꫀׁׅܻ᥅
+
+Example repo to render and interact with NFT Editions / And well --- any nft on~chain (ETH Mainnet Only).
+
+## Features
+
+- List and Sell Tokens with Zora V3 Asks
+- Mint off of edition contracts deployed with Zora Creator Toolkit.
 
 ```
+    THE STACK
+
     "@zoralabs/nft-hooks"
     "@zoralabs/v3"
     "@zoralabs/zdk"
-    "@zoralabs/zdk-alpha"
     "@zoralabs/zord"
 
-    AND
+    &&&
     "@rainbow-me/rainbowkit"
     "wagmi"
 
 ```
-
-### TODO
-
-[] Check for duplicate components, move into @shared
