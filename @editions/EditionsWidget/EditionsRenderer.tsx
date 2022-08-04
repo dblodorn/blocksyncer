@@ -29,13 +29,28 @@ export function EditionInfo({
   children?: ReactNode
 }) {
   return (
-    <Stack p="x4" gap="x2">
+    <Stack p="x4" gap="x2" w="100%" overflowX="hidden">
       {name && (
-        <Heading as="h1" size="md">
+        <Heading
+          as="h2"
+          size="md"
+          style={{ overflowWrap: 'break-word', hyphens: 'auto', wordWrap: 'break-word' }}
+        >
           {name}
         </Heading>
       )}
-      {description && <Paragraph>{description}</Paragraph>}
+      {description && (
+        <Paragraph
+          as="p"
+          display={{
+            '@initial': 'none',
+            '@1024': 'inline',
+          }}
+          style={{ overflowWrap: 'break-word', hyphens: 'auto', wordWrap: 'break-word' }}
+        >
+          {description}
+        </Paragraph>
+      )}
       {children}
     </Stack>
   )
@@ -46,7 +61,18 @@ export function EditionsRenderer({ debug, ...props }: EditionsRendererProps) {
 
   return (
     <Box {...props} w="100%">
-      <Flex h="100%" w="100%" position="relative">
+      <Flex
+        w="100%"
+        position="relative"
+        direction={{
+          '@initial': 'column',
+          '@1024': 'row',
+        }}
+        h={{
+          '@initial': 'auto',
+          '@1024': '100%',
+        }}
+      >
         <>
           {contractProps ? (
             <>
@@ -70,7 +96,14 @@ export function EditionsRenderer({ debug, ...props }: EditionsRendererProps) {
                 <AudioPlayer src={contractProps?.contractMetadata?.animationURI} />
               </EditionInfo>
               {debug && (
-                <Box position="absolute" bottom="x3" right="x3">
+                <Box
+                  px="x4"
+                  pb="x4"
+                  position={{
+                    '@initial': 'relative',
+                    '@1024': 'absolute',
+                  }}
+                >
                   <ModalComposition
                     modalName={`${contractAddress}-debug`}
                     trigger={

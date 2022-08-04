@@ -44,6 +44,7 @@ export function Landing() {
         </Text>
         {editionsAddressOnly.map((address) => (
           <EditionsWidget
+            key={address}
             contractAddress={address}
             className={[landingNFTRow, nftRowEdition]}
             debug
