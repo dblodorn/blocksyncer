@@ -8,6 +8,10 @@ The intention here is to expose much of the frontend functionality we have been 
 
 Examples of styling included with heaps of componentry to provide inspiration.
 
+[Here are some projects i've done at my time at Zora so far](https://www.are.na/dain-blodorn-kim/zora-x-dain-projects/grid)
+
+-- clearly it's been pretty fun!
+
 ## Getting started:
 
 > Use the template
