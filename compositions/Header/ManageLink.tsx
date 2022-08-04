@@ -19,8 +19,6 @@ export function ManageLink() {
         className={[manageButton, 'zora-popover-menu__manage-link']}
         style={{
           height: 42,
-          paddingLeft: 20,
-          paddingRight: 20,
         }}
       >
         {MANAGE_CTA}

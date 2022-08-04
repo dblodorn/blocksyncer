@@ -1,11 +1,16 @@
 import { style, globalStyle } from '@vanilla-extract/css'
-import { atoms, color } from '@zoralabs/zord'
+import { atoms, color, media } from '@zoralabs/zord'
 import { HEADER_HEIGHT } from 'styles/style-constants'
 
 export const landingGridWrapper = style([
   {
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    height: `calc(100vh - ${HEADER_HEIGHT * 2}px)`,
+    gridTemplateColumns: '1fr',
+    '@media': {
+      [media.min1024]: {
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        height: `calc(100vh - ${HEADER_HEIGHT * 2}px)`,
+      },
+    },
   },
   atoms({
     w: '100%',
@@ -18,9 +23,15 @@ export const landingGridPanel = style([
   atoms({
     w: '100%',
     h: '100%',
-    position: 'sticky',
-    top: 'x0',
-    overflowY: 'scroll',
+    position: {
+      '@1024': 'sticky',
+    },
+    top: {
+      '@1024': 'x0',
+    },
+    overflowY: {
+      '@1024': 'scroll',
+    },
   }),
 ])
 
@@ -28,9 +39,22 @@ export const landingHeadline = style([
   {
     borderBottom: `1px dashed ${color.black50}`,
     zIndex: 100,
+    fontSize: 30,
+    '@media': {
+      [media.min1024]: {
+        fontSize: 55,
+      },
+    },
   },
   atoms({
-    px: 'x4',
+    px: {
+      '@initial': 'x4',
+      '@1024': 'x4',
+    },
+    py: {
+      '@initial': 'x3',
+      '@1024': 'x0',
+    },
     position: 'sticky',
     top: 'x0',
   }),
@@ -67,6 +91,16 @@ export const nftRowCollection = style([
     selectors: {
       '&:nth-of-type(even)': {
         backgroundColor: '#e1c9b1',
+      },
+    },
+  },
+])
+
+export const landingNFTRow = style([
+  {
+    '@media': {
+      [media.min1024]: {
+        height: 350,
       },
     },
   },

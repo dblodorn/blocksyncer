@@ -55,7 +55,10 @@ export const manageButton = style([
   },
   atoms({
     w: '100%',
-    justifyContent: 'center',
+    justifyContent: {
+      '@initial': 'center',
+      '@1024': 'center',
+    },
   }),
 ])
 
@@ -72,6 +75,9 @@ export const connectButtonWrapper = style([
   },
   atoms({
     w: '100%',
-    justifyContent: 'flex-start',
+    justifyContent: {
+      '@initial': 'flex-end',
+      '@1024': 'flex-start',
+    },
   }),
 ])

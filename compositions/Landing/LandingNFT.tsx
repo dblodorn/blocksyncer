@@ -1,10 +1,10 @@
-import { Flex, Box, Stack, Heading } from '@zoralabs/zord'
+import { Flex, Stack, Heading } from '@zoralabs/zord'
 import { useNFTProvider } from '@shared'
-import { ImageElement } from 'components'
 import { CollectionThumbnail } from 'components'
 import Link from 'next/link'
 import { NFTCardMarket } from '@market'
 import { MediaRenderer } from 'components/@media/MediaRenderer'
+import { landingNFTRow } from './Landing.css'
 
 export function LandingNFT({
   collectionType,
@@ -26,8 +26,11 @@ export function LandingNFT({
       w="100%"
       position="relative"
       overflow="hidden"
-      style={{ height: 350 }}
-      className={[customClassName, 'landing-nft-row']}
+      direction={{
+        '@initial': 'column',
+        '@1024': 'row',
+      }}
+      className={[customClassName, landingNFTRow, 'landing-nft-row']}
     >
       <MediaRenderer />
       <Stack gap="x2" mt="x2" px="x4" pb="x4">

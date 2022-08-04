@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { Box, BoxProps } from '@zoralabs/zord'
 import { useNFTProvider } from '@shared'
 import { ImageElement } from 'components'
+import { AudioPlayer } from './AudioPlayer'
 
 export interface MediaRendererProps extends BoxProps {}
 
@@ -12,20 +13,39 @@ export function MediaRenderer({ ...props }: MediaRendererProps) {
     tokenId,
   } = useNFTProvider()
 
-  console.log(data?.content?.mimeType)
-
-  const renderer = useMemo(() => {}, [data?.content?.mimeType])
+  const renderer = useMemo(() => {
+    const mimeType = data?.content?.mimeType
+    if (mimeType) {
+      if (mimeType.startsWith('audio')) {
+        return (
+          <AudioPlayer
+            src={data?.content?.large?.uri}
+            style={{ zIndex: 100 }}
+            position="absolute"
+            bottom="x0"
+            left="x0"
+            h="x16"
+            px="x2"
+            pb="x2"
+            w="100%"
+          />
+        )
+      }
+    }
+  }, [data?.content?.mimeType])
 
   if (!data || !contractAddress || !tokenId) return null
 
   return (
-    <Box {...props}>
+    <Box {...props} position="relative">
       <Box
         h="100%"
         style={{ aspectRatio: '1/1' }}
         backgroundColor="tertiary"
         position="relative"
+        className="media-renderer"
       >
+        {renderer}
         <ImageElement src={data?.media?.poster?.uri} />
       </Box>
     </Box>

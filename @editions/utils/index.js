@@ -1,0 +1,1 @@
+export { getContractProps } from './contractProps'

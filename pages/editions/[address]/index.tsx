@@ -16,9 +16,9 @@ import { EditionsProvider, useEditionsProvider } from '@editions'
 import { RawDisplayer } from 'components/utils'
 
 function ProviderData() {
-  const { contractMetadata, totalSupplyData, salesConfig } = useEditionsProvider()
+  const { contractProps } = useEditionsProvider()
 
-  return <RawDisplayer data={{ contractMetadata, totalSupplyData, salesConfig }} />
+  return <RawDisplayer data={contractProps} />
 }
 
 const Edition = ({ contractAddress, seo }: CollectionServiceProps) => {

@@ -1,4 +1,4 @@
-import { Display, Grid, Stack } from '@zoralabs/zord'
+import { Text, Grid, Stack } from '@zoralabs/zord'
 import {
   landingGridWrapper,
   landingGridPanel,
@@ -17,13 +17,13 @@ export function Landing() {
   return (
     <Grid className={[landingGridWrapper]}>
       <Stack className={[landingGridPanel]} style={{ backgroundColor: '#f59994' }}>
-        <Display
+        <Text
           as="h1"
           className={['outline-font', landingHeadline]}
           style={{ backgroundColor: '#405416' }}
         >
           Collections
-        </Display>
+        </Text>
         <CollectionFilterProvider
           useSidebarClearButton
           contractAddress={collectionsAddressOnly}
@@ -33,13 +33,13 @@ export function Landing() {
         </CollectionFilterProvider>
       </Stack>
       <Stack className={[landingGridPanel]} style={{ backgroundColor: '#405416' }}>
-        <Display
+        <Text
           as="h1"
           className={['outline-font', landingHeadline]}
           style={{ backgroundColor: '#f59994' }}
         >
           Editions
-        </Display>
+        </Text>
         <CollectionFilterProvider
           useSidebarClearButton
           contractAddress={editionsAddressOnly}
