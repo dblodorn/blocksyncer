@@ -18,12 +18,14 @@
   --light-grey: rgba(0, 0, 0, 0.125);
   --border-a: 1px solid blue;
   --border-b: 1px dotted rgba(255, 255, 255, 0.5);
+  --black-50: #808080;
   --background-color: #e8e5dc;
   --menu-bg-color: #ffea02;
   --syncer-yellow: #ffea02;
   --nft-background-color: #f5f5b8;
   --card-info-color: #fa9442;
   --collection-background-color: #a3ad00;
+  --dashed-border: 1px dashed var(--black-50);
 }
 
 .bd-console-italic,

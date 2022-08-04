@@ -4,6 +4,7 @@ import {
   landingGridPanel,
   landingHeadline,
   nftRowEdition,
+  landingNFTRow,
   nftRowCollection,
 } from './Landing.css'
 import { CollectionFilterProvider } from '@filter'
@@ -12,6 +13,7 @@ import {
   collectionsAddressOnly,
   editionsAddressOnly,
 } from 'constants/collection-addresses'
+import { EditionsWidget } from '@editions/EditionsWidget'
 
 export function Landing() {
   return (
@@ -22,7 +24,7 @@ export function Landing() {
           className={['outline-font', landingHeadline]}
           style={{ backgroundColor: '#405416' }}
         >
-          Collections
+          1 / 1s
         </Text>
         <CollectionFilterProvider
           useSidebarClearButton
@@ -38,15 +40,16 @@ export function Landing() {
           className={['outline-font', landingHeadline]}
           style={{ backgroundColor: '#f59994' }}
         >
-          Editions
+          1 / ∞
         </Text>
-        <CollectionFilterProvider
-          useSidebarClearButton
-          contractAddress={editionsAddressOnly}
-          useSidebarFilter={false}
-        >
-          <LandingNFTs collectionType="editions" customClassName={nftRowEdition} />
-        </CollectionFilterProvider>
+        {editionsAddressOnly.map((address) => (
+          <EditionsWidget
+            key={address}
+            contractAddress={address}
+            className={[landingNFTRow, nftRowEdition]}
+            debug
+          />
+        ))}
       </Stack>
     </Grid>
   )

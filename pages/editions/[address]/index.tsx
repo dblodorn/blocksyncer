@@ -1,16 +1,6 @@
 import { PageWrapper } from 'components/PageWrapper'
 import { collectionService, CollectionServiceProps } from 'services/collectionService'
-import { useEffect } from 'react'
-import { MarketStats } from '@market/components/MarketStats'
 import { Seo } from 'components'
-import { useCollectionsContext } from 'providers/CollectionsProvider'
-import {
-  Collections,
-  CollectionActivityHeader,
-  CollectionHeader,
-} from 'compositions/Collections'
-import { CollectionFilterProvider } from '@filter'
-import { Stack } from '@zoralabs/zord'
 import { useCollection } from '@filter/hooks/useCollection'
 import { EditionsProvider, useEditionsProvider } from '@editions'
 import { RawDisplayer } from 'components/utils'

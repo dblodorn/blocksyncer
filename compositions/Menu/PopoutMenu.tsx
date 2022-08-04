@@ -52,7 +52,6 @@ export function PopoutMenu({ ...props }: PopoutMenuProps) {
       }
       content={
         <Stack mt="x4" gap="x4">
-          <Separator />
           {collectionAmount > 0 && (
             <Stack gap="x4" px="x4">
               <Heading as="h1" size="md">
@@ -61,7 +60,6 @@ export function PopoutMenu({ ...props }: PopoutMenuProps) {
               <CollectionNavList items={collections} onClickHandler={requestClose} />
             </Stack>
           )}
-          {collectionAmount > 0 && editionsAmount > 0 && <Separator />}
           {editionsAmount > 0 && (
             <Stack gap="x4" px="x4">
               <Heading as="h1" size="md">
@@ -70,7 +68,6 @@ export function PopoutMenu({ ...props }: PopoutMenuProps) {
               <CollectionNavList items={editions} onClickHandler={requestClose} />
             </Stack>
           )}
-          <Separator />
         </Stack>
       }
       popoutName={'main-menu'}
