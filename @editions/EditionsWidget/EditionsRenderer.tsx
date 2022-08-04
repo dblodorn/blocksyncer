@@ -103,6 +103,14 @@ export function EditionsRenderer({ debug, ...props }: EditionsRendererProps) {
                     '@initial': 'relative',
                     '@1024': 'absolute',
                   }}
+                  bottom={{
+                    '@initial': 'auto',
+                    '@1024': 'x0',
+                  }}
+                  right={{
+                    '@initial': 'auto',
+                    '@1024': 'x0',
+                  }}
                 >
                   <ModalComposition
                     modalName={`${contractAddress}-debug`}

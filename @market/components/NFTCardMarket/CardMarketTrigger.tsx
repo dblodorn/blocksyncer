@@ -7,7 +7,7 @@ interface TriggerProps extends ButtonProps {
 
 export function CardMarketTrigger({ cta, ...props }: TriggerProps) {
   return (
-    <Button as="span" variant="secondary" borderRadius="round" {...props}>
+    <Button as="span" variant="secondary" size="sm" borderRadius="round" {...props}>
       {cta}
     </Button>
   )

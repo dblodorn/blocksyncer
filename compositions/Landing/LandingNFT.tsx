@@ -1,4 +1,4 @@
-import { Flex, Stack, Heading } from '@zoralabs/zord'
+import { Flex, Stack, Heading, Box, Button } from '@zoralabs/zord'
 import { useNFTProvider } from '@shared'
 import { CollectionThumbnail } from 'components'
 import Link from 'next/link'
@@ -33,13 +33,8 @@ export function LandingNFT({
       className={[customClassName, landingNFTRow, 'landing-nft-row']}
     >
       <MediaRenderer style={{ borderRight: 'var(--dashed-border)' }} />
-      <Stack gap="x2" mt="x2" px="x4" pb="x4">
-        <Link href={`/${collectionType}/${contractAddress}/${tokenId}`} passHref>
-          <Heading as="h4" size="sm">
-            {data?.metadata?.name}
-          </Heading>
-        </Link>
-        <Flex align="center" gap="x2" justify="space-between">
+      <Stack gap="x2" mt="x2" px="x4" pb="x4" w="100%" position="relative">
+        <Flex align="center" gap="x2" justify="space-between" mt="x3">
           <Link href={`/${collectionType}/${contractAddress}`}>
             <Flex align="center" gap="x2">
               <CollectionThumbnail
@@ -51,7 +46,27 @@ export function LandingNFT({
             </Flex>
           </Link>
         </Flex>
-        {collectionType === 'collections' && <NFTCardMarket nftData={data} />}
+        <Flex px="x1" py="x2" justify="flex-start">
+          <Link href={`/${collectionType}/${contractAddress}/${tokenId}`} passHref>
+            <Button as="a" variant="unset" textAlign="left">
+              <Heading as="h4" size="sm">
+                {data?.metadata?.name}
+              </Heading>
+            </Button>
+          </Link>
+        </Flex>
+        <Flex
+          position={{
+            '@initial': 'relative',
+            '@1024': 'absolute',
+          }}
+          bottom={{
+            '@initial': 'auto',
+            '@1024': 'x4',
+          }}
+        >
+          <NFTCardMarket nftData={data} gap="x8" />
+        </Flex>
       </Stack>
     </Flex>
   )
