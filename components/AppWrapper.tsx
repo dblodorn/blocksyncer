@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { createClient, chain, configureChains, WagmiConfig } from 'wagmi'
 import { infuraProvider } from 'wagmi/providers/infura'
+import { publicProvider } from 'wagmi/providers/public'
 import { NFTFetchConfiguration } from '@zoralabs/nft-hooks'
 import NextNProgress from 'nextjs-progressbar'
 import { ZDKFetchStrategy } from '@zoralabs/nft-hooks/dist/strategies'
@@ -18,7 +19,7 @@ const infuraId = process.env.NEXT_PUBLIC_INFURA_ID
 
 const { chains, provider } = configureChains(
   [chain.mainnet],
-  [infuraProvider({ infuraId })]
+  [infuraProvider({ infuraId }), publicProvider()]
 )
 
 const { connectors } = getDefaultWallets({
