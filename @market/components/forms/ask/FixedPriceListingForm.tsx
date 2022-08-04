@@ -107,6 +107,7 @@ export function FixedPriceListingForm({
             txStatus={txStatus}
             txInProgress={txInProgress}
             disabled={!isValid}
+            type="submit"
           >
             List
           </TransactionSubmitButton>
