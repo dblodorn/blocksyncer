@@ -27,7 +27,7 @@ const NFT = ({
         tokenAddress={tokenAddress}
         tokenId={tokenId}
         /* STYLING */
-        mt="x8"
+        my="x8"
       />
     </PageWrapper>
   )

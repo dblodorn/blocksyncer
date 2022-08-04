@@ -4,6 +4,7 @@ import { ImageElement } from 'components'
 import { CollectionThumbnail } from 'components'
 import Link from 'next/link'
 import { NFTCardMarket } from '@market'
+import { MediaRenderer } from 'components/@media/MediaRenderer'
 
 export function LandingNFT({
   collectionType,
@@ -28,20 +29,13 @@ export function LandingNFT({
       style={{ height: 350 }}
       className={[customClassName, 'landing-nft-row']}
     >
-      <Link href={`/${collectionType}/${contractAddress}/${tokenId}`} passHref>
-        <Box
-          h="100%"
-          style={{ aspectRatio: '1/1' }}
-          backgroundColor="tertiary"
-          position="relative"
-        >
-          <ImageElement src={data?.media?.poster?.uri} />
-        </Box>
-      </Link>
+      <MediaRenderer />
       <Stack gap="x2" mt="x2" px="x4" pb="x4">
-        <Heading as="h4" size="sm">
-          {data?.metadata?.name}
-        </Heading>
+        <Link href={`/${collectionType}/${contractAddress}/${tokenId}`} passHref>
+          <Heading as="h4" size="sm">
+            {data?.metadata?.name}
+          </Heading>
+        </Link>
         <Flex align="center" gap="x2" justify="space-between">
           <Link href={`/${collectionType}/${contractAddress}`}>
             <Flex align="center" gap="x2">

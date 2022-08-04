@@ -12,6 +12,7 @@ import { GALACTUS_BASE_URL } from 'constants/env-vars'
 import { SWRConfig } from 'swr'
 import { ModalContextProvider } from '@modal'
 import { PopoutContextProvider } from '@popout'
+import { ContractProvider } from '@market/providers/ContractProvider'
 
 const infuraId = process.env.NEXT_PUBLIC_INFURA_ID
 
@@ -73,7 +74,9 @@ export function AppWrapper({ children }: { children: JSX.Element }) {
                 options={{ showSpinner: false }}
               />
               <ModalContextProvider>
-                <PopoutContextProvider>{children}</PopoutContextProvider>
+                <PopoutContextProvider>
+                  <ContractProvider>{children}</ContractProvider>
+                </PopoutContextProvider>
               </ModalContextProvider>
             </V3Provider>
           </NFTFetchConfiguration>

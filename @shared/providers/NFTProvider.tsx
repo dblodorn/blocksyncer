@@ -39,7 +39,6 @@ export function NFTProvider({
   ...props
 }: NFTProps) {
   const { data, error, currencyLoaded, marketError } = useNFT(contractAddress, tokenId)
-
   return (
     <NFTContext.Provider
       value={{

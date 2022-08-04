@@ -4,6 +4,7 @@ import { nftPageHero } from './NFTPage.css'
 import { useSourceImage } from 'components/@media/hooks/useSrcImage'
 import { useNFTProvider } from '@shared/providers/NFTProvider'
 import { ImageElement } from 'components'
+import { MediaRenderer } from 'components/@media/MediaRenderer'
 
 export interface NFTPageHeroProps extends BoxProps {}
 
@@ -19,7 +20,7 @@ export function NFTPageHero({ ...props }: NFTPageHeroProps) {
       overflow="hidden"
       {...props}
     >
-      {contractAddress && tokenId && <ImageElement src={srcImg} />}
+      {contractAddress && tokenId && <MediaRenderer />}
     </Box>
   )
 }
