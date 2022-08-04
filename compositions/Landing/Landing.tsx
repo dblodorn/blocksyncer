@@ -12,6 +12,7 @@ import {
   collectionsAddressOnly,
   editionsAddressOnly,
 } from 'constants/collection-addresses'
+import { EditionsWidget } from '@editions/EditionsWidget'
 
 export function Landing() {
   return (
@@ -40,13 +41,9 @@ export function Landing() {
         >
           Editions
         </Text>
-        <CollectionFilterProvider
-          useSidebarClearButton
-          contractAddress={editionsAddressOnly}
-          useSidebarFilter={false}
-        >
-          <LandingNFTs collectionType="editions" customClassName={nftRowEdition} />
-        </CollectionFilterProvider>
+        {editionsAddressOnly.map((address) => (
+          <EditionsWidget contractAddress={address} />
+        ))}
       </Stack>
     </Grid>
   )
