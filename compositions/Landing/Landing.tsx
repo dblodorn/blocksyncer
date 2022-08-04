@@ -24,7 +24,7 @@ export function Landing() {
           className={['outline-font', landingHeadline]}
           style={{ backgroundColor: '#405416' }}
         >
-          Collections
+          1 / 1s
         </Text>
         <CollectionFilterProvider
           useSidebarClearButton
@@ -40,7 +40,7 @@ export function Landing() {
           className={['outline-font', landingHeadline]}
           style={{ backgroundColor: '#f59994' }}
         >
-          Editions
+          1 / ∞
         </Text>
         {editionsAddressOnly.map((address) => (
           <EditionsWidget
