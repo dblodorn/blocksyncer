@@ -32,7 +32,7 @@ export function LandingNFT({
       }}
       className={[customClassName, landingNFTRow, 'landing-nft-row']}
     >
-      <MediaRenderer />
+      <MediaRenderer style={{ borderRight: 'var(--dashed-border)' }} />
       <Stack gap="x2" mt="x2" px="x4" pb="x4">
         <Link href={`/${collectionType}/${contractAddress}/${tokenId}`} passHref>
           <Heading as="h4" size="sm">

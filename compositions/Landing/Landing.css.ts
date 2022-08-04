@@ -37,7 +37,7 @@ export const landingGridPanel = style([
 
 export const landingHeadline = style([
   {
-    borderBottom: `1px dashed ${color.black50}`,
+    borderBottom: 'var(--dashed-border)',
     zIndex: 100,
     fontSize: 30,
     '@media': {
@@ -98,6 +98,7 @@ export const nftRowCollection = style([
 
 export const landingNFTRow = style([
   {
+    borderBottom: 'var(--dashed-border)',
     '@media': {
       [media.min1024]: {
         height: 350,

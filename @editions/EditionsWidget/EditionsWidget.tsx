@@ -4,12 +4,17 @@ import { EditionsRenderer } from './EditionsRenderer'
 
 export interface EditionsWidgetProps extends BoxProps {
   contractAddress: string
+  debug?: boolean
 }
 
-export function EditionsWidget({ contractAddress, ...props }: EditionsWidgetProps) {
+export function EditionsWidget({
+  contractAddress,
+  debug,
+  ...props
+}: EditionsWidgetProps) {
   return (
     <EditionsProvider contractAddress={contractAddress}>
-      <EditionsRenderer {...props} />
+      <EditionsRenderer {...props} debug={debug} />
     </EditionsProvider>
   )
 }

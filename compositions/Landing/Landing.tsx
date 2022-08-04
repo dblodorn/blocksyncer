@@ -4,6 +4,7 @@ import {
   landingGridPanel,
   landingHeadline,
   nftRowEdition,
+  landingNFTRow,
   nftRowCollection,
 } from './Landing.css'
 import { CollectionFilterProvider } from '@filter'
@@ -42,7 +43,11 @@ export function Landing() {
           Editions
         </Text>
         {editionsAddressOnly.map((address) => (
-          <EditionsWidget contractAddress={address} />
+          <EditionsWidget
+            contractAddress={address}
+            className={[landingNFTRow, nftRowEdition]}
+            debug
+          />
         ))}
       </Stack>
     </Grid>
