@@ -5,19 +5,19 @@ export type ContractObject = {
 
 const collections: ContractObject[] = [
   {
-    tokenContract: '0xf68CC00F5bF70bD39542D2E2dee3F718733408D9',
-    contractType: 'MINTING_CONTRACT',
-  },
-  {
-    tokenContract: '0xfd05b04a0040325C0D975B89F6F3AeB188FB1fBD',
-    contractType: 'MINTING_CONTRACT',
-  },
-  {
     tokenContract: '0x4d48138b03Aa25aE6919A4a3901B4e5295F0e8E6',
     contractType: 'MINTING_CONTRACT',
   },
   {
     tokenContract: '0x5BBC122E437A0F418b64454De76A431658C5162B',
+    contractType: 'MINTING_CONTRACT',
+  },
+  {
+    tokenContract: '0xf68CC00F5bF70bD39542D2E2dee3F718733408D9',
+    contractType: 'MINTING_CONTRACT',
+  },
+  {
+    tokenContract: '0xfd05b04a0040325C0D975B89F6F3AeB188FB1fBD',
     contractType: 'MINTING_CONTRACT',
   },
 ]
