@@ -1,4 +1,4 @@
-# ϐׁׅ֒ᥣׁׅ֪ᨵׁׅᝯׁƙׁׅ֑꯱ׁׅ֒ᨮ꫶ׁׅ֮ꪀׁׅᝯׁꫀׁׅܻ᥅
+# ϐׁׅ֒ᥣׁׅ֪ᨵׁׅᝯׁƙׁׅ֑꯱ׁׅ֒ᨮ꫶ׁׅ֮ꪀׁׅᝯׁꫀׁׅܻ᥅ ☼☽
 
 ![ׁׅ֒ᥣׁׅ֪ᨵׁׅᝯׁƙׁׅ֑꯱ׁׅ֒ᨮ꫶ׁׅ֮ꪀׁׅᝯׁꫀׁׅܻ᥅](https://db13.mypinata.cloud/ipfs/QmYmeLSKkkes8NH7uM8fJNkdSq7txsHMXZaFmbWQ8cxV6D)
 
@@ -7,6 +7,61 @@ Example repo to render and interact with NFT Editions / ...ꪖꪀᦔ ᭙ꫀꪶ�
 The intention here is to expose much of the frontend functionality we have been working on collectively in the context of a fun exploratory project. I'll be adding more features as they come. And expect a general purpose, Zora Official, template very soon.
 
 Examples of styling included with heaps of componentry to provide inspiration.
+
+## Getting started:
+
+> Use the template
+> This is a github template - so all you need to do is click on the BIG GREEN "Use this template" Button.
+
+> Clone the repo
+> Once you've created your repo clone it down to your ᝯׁᨵׁׅ ꩇׁׅ݊℘υׁׅtׁׅꫀׁׅܻr...
+
+```
+git clone https://github.com/[user]/[your-repo-name]
+```
+
+> Install dependencies
+
+```
+cd [your-repo-name]
+yarn
+```
+
+> Run locally
+
+```
+yarn dev
+```
+
+I recommend using [▲ Vercel](https://vercel.com/) for deployment
+
+## ENV VARS
+
+### PUBLIC:
+
+```
+    NEXT_PUBLIC_SITE_TITLE='Your App Name'
+    NEXT_PUBLIC_SITE_DESCRIPTION='Your app description'
+    NEXT_PUBLIC_TWITTER_HANDLE='Your twitter handle'
+    NEXT_PUBLIC_WEBSITE_URL='http://localhost:3000' (modify this VAR in your deployment to reflect the Public URL)
+    NEXT_PUBLIC_NETWORK_URL=1 (Mainnet - thats what we're working with here)
+    NEXT_PUBLIC_GA_TRACKING_ID= IF you want to add this sort of thing.
+    NEXT_PUBLIC_GALACTUS_BASE_URL=https://api.zora.co/graphql
+```
+
+### Private (Don't commit to your repo) - .env.local
+
+```
+    NEXT_PUBLIC_ZORA_API_KEY=
+    NEXT_PUBLIC_INFURA_ID=
+    NEXT_PUBLIC_RPC_URL=
+```
+
+You can use Alchemy or infura for your RPC provider. I'm using infura.
+
+Check the docs for [Wagmi](https://wagmi.sh/docs/providers/configuring-chains) to configure chains
+
+Direct message @ZORAEngineering on Twitter for an API key if your needs require greater than 30 requests per mintue. To access the API with a key, add a header in your requests with the key X-API-KEY.
 
 ## Specifying contracts:
 
