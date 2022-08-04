@@ -1,13 +1,4 @@
-import {
-  Button,
-  ButtonProps,
-  Box,
-  Icon,
-  Stack,
-  Label,
-  Heading,
-  Separator,
-} from '@zoralabs/zord'
+import { Button, ButtonProps, Box, Icon, Stack, Heading } from '@zoralabs/zord'
 import { PopoutComposition } from '@popout'
 import { collectionTrigger } from './CollectionMenu.css'
 import { noTextWrap } from 'styles/styles.css'

@@ -3,8 +3,8 @@ import * as gtag from 'lib/gtag'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { createClient, chain, configureChains, WagmiConfig } from 'wagmi'
-import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
+import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { NFTFetchConfiguration } from '@zoralabs/nft-hooks'
 import NextNProgress from 'nextjs-progressbar'
 import { ZDKFetchStrategy } from '@zoralabs/nft-hooks/dist/strategies'
@@ -15,13 +15,12 @@ import { ModalContextProvider } from '@modal'
 import { PopoutContextProvider } from '@popout'
 import { ContractProvider } from '@market/providers/ContractProvider'
 
-const infuraId = process.env.NEXT_PUBLIC_INFURA_ID
+const alchemyKey = process.env.NEXT_PUBLIC_ALCHEMY_KEY
 
 const { chains, provider } = configureChains(
   [chain.mainnet],
-  [infuraProvider({ infuraId }), publicProvider()]
+  [alchemyProvider({ alchemyId: alchemyKey }), publicProvider()]
 )
-
 const { connectors } = getDefaultWallets({
   appName: 'Contract Manager',
   chains,
