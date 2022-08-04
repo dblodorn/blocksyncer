@@ -57,11 +57,11 @@ I recommend using [▲ Vercel](https://vercel.com/) for deployment
     NEXT_PUBLIC_RPC_URL=
 ```
 
-You can use Alchemy or infura for your RPC provider. I'm using infura.
+You can use [Alchemy](https://www.alchemy.com/) or [infura](https://infura.io/) for your RPC provider. I'm using infura.
 
 Check the docs for [Wagmi](https://wagmi.sh/docs/providers/configuring-chains) to configure chains
 
-Direct message @ZORAEngineering on Twitter for an API key if your needs require greater than 30 requests per mintue. To access the API with a key, add a header in your requests with the key X-API-KEY.
+Direct message [@ZORAEngineering](https://twitter.com/ZORAEngineering) on Twitter for an API key if your needs require greater than 30 requests per mintue. To access the API with a key, add a header in your requests with the key X-API-KEY.
 
 ## Specifying contracts:
 
