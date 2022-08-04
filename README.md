@@ -11,10 +11,12 @@ Examples of styling included with heaps of componentry to provide inspiration.
 ## Getting started:
 
 > Use the template
-> This is a github template - so all you need to do is click on the BIG GREEN "Use this template" Button.
+
+This is a github template - so all you need to do is click on the BIG GREEN "Use this template" Button.
 
 > Clone the repo
-> Once you've created your repo clone it down to your ᝯׁᨵׁׅ ꩇׁׅ݊℘υׁׅtׁׅꫀׁׅܻr...
+
+Once you've created your repo clone it down to your ᝯׁᨵׁׅ ꩇׁׅ݊℘υׁׅtׁׅꫀׁׅܻr...
 
 ```
 git clone https://github.com/[user]/[your-repo-name]
