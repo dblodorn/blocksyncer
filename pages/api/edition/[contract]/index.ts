@@ -13,6 +13,14 @@ const CONTRACT_METADATA_SCHEMA = {
   animationURI: null,
 }
 
+type CONTRACT_METADATA_PROPS =
+  | {
+      description: string
+      imageURI: string
+      animationURI: string
+    }
+  | undefined
+
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const { contract } = req.query
 
@@ -23,29 +31,38 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       new ethers.providers.StaticJsonRpcProvider(process.env.NEXT_PUBLIC_RPC_URL)
     )
 
-    const metadataContract = new ethers.Contract(
-      EDITIONS_METADATA_RENDERER as string,
-      editionsMetadata.abi,
-      new ethers.providers.StaticJsonRpcProvider(process.env.NEXT_PUBLIC_RPC_URL)
-    )
-
     const contractProps = await getContractProps(editionsContract)
 
-    const contractMetadata = await metadataContract.tokenInfos(contract)
+    let contractMetadata: any
 
-    const keys = Object.keys(CONTRACT_METADATA_SCHEMA)
-    const parsedMetadata = Object.fromEntries(
-      keys.map((name, index) => {
-        if (name === 'imageURI' || 'animationURI') {
-          return [name, addIPFSGateway(contractMetadata[index])]
-        } else {
-          return [name, contractMetadata[index]]
-        }
-      })
-    )
+    try {
+      const metadataContract = new ethers.Contract(
+        contractProps.config.metadataRenderer as string,
+        editionsMetadata.abi,
+        new ethers.providers.StaticJsonRpcProvider(process.env.NEXT_PUBLIC_RPC_URL)
+      )
+
+      const contractMetadataResponse = await metadataContract.tokenInfos(contract)
+
+      const keys = Object.keys(CONTRACT_METADATA_SCHEMA)
+
+      if (contractMetadataResponse !== undefined) {
+        contractMetadata = Object.fromEntries(
+          keys.map((name, index) => {
+            if (name === 'imageURI' || 'animationURI') {
+              return [name, addIPFSGateway(contractMetadataResponse[index])]
+            } else {
+              return [name, contractMetadataResponse[index]]
+            }
+          })
+        )
+      }
+    } catch (err) {
+      console.error(err)
+    }
 
     return res.status(200).json({
-      contractMetadata: parsedMetadata,
+      contractMetadata: contractMetadata,
       contractProps: contractProps,
     })
   } catch (err) {

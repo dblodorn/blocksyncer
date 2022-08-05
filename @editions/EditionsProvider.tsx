@@ -22,7 +22,7 @@ export function useEditionsProvider() {
 }
 
 export function EditionsProvider({ contractAddress, children }: EditionsProps) {
-  const { data } = useSWR(`/api/edition/${contractAddress}`)
+  const { data } = useSWR(`/api/edition/${contractAddress}`, { refreshInterval: 0 })
 
   return (
     <EditionsContext.Provider

@@ -35,6 +35,14 @@ const editions: ContractObject[] = [
     tokenContract: '0xb7a791c3b5a0aa833e638250f982ebd29194f02c',
     contractType: 'EDITION',
   },
+  {
+    tokenContract: '0x674fb9ed86b847db9aee0a19e9055d5d2c0e6cc4',
+    contractType: 'EDITION',
+  },
+  {
+    tokenContract: '0xf11915f3dc44519a7217f6b1e0978f29f8a0ed4b',
+    contractType: 'EDITION',
+  },
 ]
 
 export const collectionAddresses = collections.map<ContractObject>((collection) => ({

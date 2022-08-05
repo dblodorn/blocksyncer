@@ -48,7 +48,7 @@ export function LandingNFT({
         </Flex>
         <Flex px="x1" py="x2" justify="flex-start">
           <Link href={`/${collectionType}/${contractAddress}/${tokenId}`} passHref>
-            <Button as="a" variant="unset" textAlign="left">
+            <Button as="a" variant="unset">
               <Heading as="h4" size="sm">
                 {data?.metadata?.name}
               </Heading>

@@ -59,6 +59,7 @@ export function AppWrapper({ children }: { children: JSX.Element }) {
       >
         <SWRConfig
           value={{
+            refreshInterval: 0,
             fetcher: (resource, init) => fetch(resource, init).then((res) => res.json()),
           }}
         >
