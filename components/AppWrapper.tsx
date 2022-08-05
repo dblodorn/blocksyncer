@@ -22,7 +22,7 @@ const { chains, provider } = configureChains(
   [alchemyProvider({ alchemyId: alchemyKey }), publicProvider()]
 )
 const { connectors } = getDefaultWallets({
-  appName: 'Contract Manager',
+  appName: 'BlockSyncer',
   chains,
 })
 
@@ -59,7 +59,6 @@ export function AppWrapper({ children }: { children: JSX.Element }) {
       >
         <SWRConfig
           value={{
-            refreshInterval: 3000,
             fetcher: (resource, init) => fetch(resource, init).then((res) => res.json()),
           }}
         >
