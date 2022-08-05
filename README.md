@@ -33,7 +33,7 @@ cd [your-repo-name]
 yarn
 ```
 
-> Run locally
+> Run locally on port 8080 (cause got a lot of other things runnin on port 3000...)
 
 ```
 yarn dev
