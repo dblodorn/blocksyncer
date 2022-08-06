@@ -6,7 +6,7 @@ import {
 import { AddressWithLink } from '@market'
 import { PageHeader } from '../../components/PageHeader'
 import { clickAnimation, collectionHeaderWrapper } from 'styles/styles.css'
-import { CollectionThumbnail } from 'components/@media/CollectionThumbnail'
+import { CollectionThumbnail } from '@media/CollectionThumbnail'
 
 export interface CollectionHeaderProps extends GridProps {
   collection: Collection

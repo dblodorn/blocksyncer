@@ -26,6 +26,7 @@
   --card-info-color: #fa9442;
   --collection-background-color: #a3ad00;
   --dashed-border: 1px dashed var(--black-50);
+  --shadow-light: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.15));
 }
 
 .bd-console-italic,

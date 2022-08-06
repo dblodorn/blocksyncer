@@ -1,16 +1,13 @@
 import { Box, BoxProps } from '@zoralabs/zord'
-import { cardImageWrapper } from 'components/@media/NftMedia.css'
+import { cardImageWrapper } from '@media/NftMedia.css'
 import { nftPageHero } from './NFTPage.css'
-import { useSourceImage } from 'components/@media/hooks/useSrcImage'
 import { useNFTProvider } from '@shared/providers/NFTProvider'
-import { ImageElement } from 'components'
-import { MediaRenderer } from 'components/@media/MediaRenderer'
+import { MediaRenderer } from '@media/MediaRenderer'
 
 export interface NFTPageHeroProps extends BoxProps {}
 
 export function NFTPageHero({ ...props }: NFTPageHeroProps) {
-  const { initialData: nft, tokenId, contractAddress } = useNFTProvider()
-  const { srcImg } = useSourceImage(nft?.media)
+  const { tokenId, contractAddress } = useNFTProvider()
 
   return (
     <Box

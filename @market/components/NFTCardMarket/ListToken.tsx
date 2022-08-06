@@ -6,7 +6,7 @@ import { List } from '@market/wizards'
 import { CardMarketTrigger } from './CardMarketTrigger'
 import { useIsOwner } from '@market/hooks/useIsOwner'
 import { useModal } from '@modal'
-import { useRawImageTransform } from 'components/@media/hooks/useRawImageTransform'
+import { useRawImageTransform } from '@media/hooks/useRawImageTransform'
 
 export interface ListTokenProps extends FlexProps {
   nftData: NFTObject

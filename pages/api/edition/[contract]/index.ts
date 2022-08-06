@@ -1,11 +1,9 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { ethers } from 'ethers'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import editionsABI from '@zoralabs/nft-drop-contracts/dist/artifacts/ERC721Drop.sol/ERC721Drop.json'
 import editionsMetadata from '@zoralabs/nft-drop-contracts/dist/artifacts/EditionMetadataRenderer.sol/EditionMetadataRenderer.json'
-import { EDITIONS_METADATA_RENDERER } from '@editions/constants/addresses'
 import { getContractProps } from '@editions'
-import { addIPFSGateway } from 'components/@media/utils/addIPFSGateway'
+import { addIPFSGateway } from '@media/utils/addIPFSGateway'
 
 const CONTRACT_METADATA_SCHEMA = {
   description: null,

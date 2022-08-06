@@ -1,7 +1,7 @@
 import { Grid, Stack, Heading, Label, Icon, Flex } from '@zoralabs/zord'
 import { NFTObject } from '@zoralabs/nft-hooks/dist/types/NFTInterface'
-import { NFTGridLoadMore } from 'components/@media/NFTGrid/NFTGridLoadMore'
-import { nftGridWrapper } from 'components/@media/NftMedia.css'
+import { NFTGridLoadMore } from '@media/NFTGrid/NFTGridLoadMore'
+import { nftGridWrapper } from '@media/NftMedia.css'
 import { RawDisplayer } from './RawDisplayer'
 import { Link } from 'components/Link'
 

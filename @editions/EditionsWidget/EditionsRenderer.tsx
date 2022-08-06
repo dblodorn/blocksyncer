@@ -12,7 +12,7 @@ import { RawDisplayer } from 'components/utils'
 import { useEditionsProvider } from '@editions/EditionsProvider'
 import { ModalComposition } from '@modal'
 import { ImageElement } from 'components'
-import { AudioPlayer } from 'components/@media/AudioPlayer'
+import { AudioPlayer } from '@media-player'
 import { ReactNode } from 'react'
 
 export interface EditionsRendererProps extends BoxProps {
