@@ -1,7 +1,7 @@
 import { Flex, Stack, Label, Eyebrow, Icon, FlexProps } from '@zoralabs/zord'
 import { useModal } from '@modal'
 import { Link } from 'components/Link'
-import { CollectionThumbnail } from 'components/@media/CollectionThumbnail'
+import { CollectionThumbnail } from '@media/CollectionThumbnail'
 import { lightGreyType, leadingTight, lightFont } from 'styles/styles.css'
 import { CollectionsData } from 'hooks/zdk/useCollections'
 import { useAggregate } from 'hooks/zdk/useAggregate'

@@ -42,14 +42,16 @@ export function Landing() {
         >
           1 / ∞
         </Text>
-        {editionsAddressOnly.map((address) => (
-          <EditionsWidget
-            key={address}
-            contractAddress={address}
-            className={[landingNFTRow, nftRowEdition]}
-            debug
-          />
-        ))}
+        <Stack>
+          {editionsAddressOnly.map((address) => (
+            <EditionsWidget
+              key={address}
+              contractAddress={address}
+              className={[landingNFTRow, nftRowEdition, 'landing-editions']}
+              debug
+            />
+          ))}
+        </Stack>
       </Stack>
     </Grid>
   )

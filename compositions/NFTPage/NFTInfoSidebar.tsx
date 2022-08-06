@@ -1,5 +1,5 @@
 import { Heading, Stack, Flex, Paragraph, Box, BoxProps } from '@zoralabs/zord'
-import { CollectionThumbnail } from 'components/@media/CollectionThumbnail'
+import { CollectionThumbnail } from '@media/CollectionThumbnail'
 import { FillAskInfo } from '@market'
 import { useIsOwner } from '@market/hooks'
 import { Link } from 'components'

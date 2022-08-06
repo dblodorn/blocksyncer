@@ -1,5 +1,5 @@
 import { Filter, useCollectionFilters } from '@filter'
-import { NFTGrid } from 'components/@media/NFTGrid'
+import { NFTGrid } from '@media/NFTGrid'
 import { landingTokenGrid } from './Landing.css'
 import { LandingNFT } from './LandingNFT'
 

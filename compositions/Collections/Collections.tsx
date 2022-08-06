@@ -1,8 +1,8 @@
 import { Filter, useCollectionFilters } from '@filter'
-import { NFTGrid } from 'components/@media/NFTGrid'
-import { NFTCard } from 'components/@media/NFTCard'
+import { NFTGrid } from '@media/NFTGrid'
+import { NFTCard } from '@media/NFTCard'
 import { useEffect } from 'react'
-import { nftGridWrapper } from 'components/@media/NftMedia.css'
+import { nftGridWrapper } from '@media/NftMedia.css'
 
 export type CollectionsProps = {
   collectionAddress?: string

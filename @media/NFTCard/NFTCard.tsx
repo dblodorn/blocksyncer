@@ -8,8 +8,8 @@ import {
   titleScroll,
   titleHeading,
   cardImageWrapper,
-} from 'components/@media/NftMedia.css'
-import { CollectionThumbnail } from 'components/@media/CollectionThumbnail'
+} from '@media/NftMedia.css'
+import { CollectionThumbnail } from '@media/CollectionThumbnail'
 import { useNFTProvider } from '@shared'
 import { ImageElement } from 'components'
 

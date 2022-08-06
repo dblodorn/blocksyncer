@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 import { Box, BoxProps } from '@zoralabs/zord'
 import { useNFTProvider } from '@shared'
+import { AudioPlayer } from '@media-player'
 import { ImageElement } from 'components'
-import { AudioPlayer } from './AudioPlayer'
 
 export interface MediaRendererProps extends BoxProps {}
 

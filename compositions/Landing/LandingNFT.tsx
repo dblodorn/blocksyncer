@@ -1,9 +1,9 @@
-import { Flex, Stack, Heading, Box, Button } from '@zoralabs/zord'
-import { useNFTProvider } from '@shared'
-import { CollectionThumbnail } from 'components'
+import { Flex, Stack, Heading, Button } from '@zoralabs/zord'
 import Link from 'next/link'
+import { useNFTProvider } from '@shared'
+import { CollectionThumbnail } from '@media/CollectionThumbnail'
 import { NFTCardMarket } from '@market'
-import { MediaRenderer } from 'components/@media/MediaRenderer'
+import { MediaRenderer } from '@media/MediaRenderer'
 import { landingNFTRow } from './Landing.css'
 
 export function LandingNFT({
